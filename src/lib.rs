@@ -12,7 +12,7 @@ impl Prng {
         Prng { prng }
     }
 
-    pub fn next_u64(mut self, min: u64, max: u64) -> u64 {
+    pub fn next_u64(&mut self, min: u64, max: u64) -> u64 {
         let range = (max - min) as u64;
         min + self.prng.next_u64() % range
     }
